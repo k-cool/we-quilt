@@ -1,14 +1,20 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor } from './store';
-import Router from './Router';
+import React from "react";
+import Router from "./Router";
+import GlobalStyles from "./styles/GlobalStyles";
+import theme from "./styles/theme";
+import { ThemeProvider } from "styled-components";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./store";
 
 function App() {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Router />
+        <GlobalStyles />
+        <ThemeProvider theme={theme}>
+          <Router />
+        </ThemeProvider>
       </PersistGate>
     </Provider>
   );
