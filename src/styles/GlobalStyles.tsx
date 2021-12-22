@@ -1,7 +1,7 @@
-import * as styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
-export default styled.createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
   ${reset};
 
   * {
@@ -16,7 +16,7 @@ export default styled.createGlobalStyle`
 
   body {
     color: #343a40;
-    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-weight: 400;
   }
 
@@ -44,3 +44,5 @@ export default styled.createGlobalStyle`
     cursor: pointer;
   }
 `;
+
+export default GlobalStyles;
