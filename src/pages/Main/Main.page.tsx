@@ -1,35 +1,59 @@
-import React from "react";
-import styled from "styled-components";
+import ProductList from '../../components/ProductList/ProductList';
+import { ProductProps } from '@/components/ProductList/products';
 
 function Main(): JSX.Element {
-  return <Container text="사이즈입니다.">hi</Container>;
+  const products: ProductProps[] = [
+    {
+      id: 1,
+      name: '가방1',
+      soldout: false,
+      imageUrl: 'https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9300000003335]_20210310092146175.jpg',
+      price: 100000,
+    },
+    {
+      id: 2,
+      name: '가방1',
+      soldout: false,
+      imageUrl: 'https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9300000003335]_20210310092146175.jpg',
+      price: 100000,
+    },
+    {
+      id: 3,
+      name: '가방1',
+      soldout: false,
+      imageUrl: 'https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9300000003335]_20210310092146175.jpg',
+      price: 100000,
+    },
+    {
+      id: 4,
+      name: '가방1',
+      soldout: false,
+      imageUrl: 'https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9300000003335]_20210310092146175.jpg',
+      price: 100000,
+    },
+    {
+      id: 5,
+      name: '가방1',
+      soldout: false,
+      imageUrl: 'https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9300000003335]_20210310092146175.jpg',
+      price: 100000,
+    },
+    {
+      id: 6,
+      name: '가방1',
+      soldout: false,
+      imageUrl: 'https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9300000003335]_20210310092146175.jpg',
+      price: 100000,
+    },
+    {
+      id: 7,
+      name: '가방1',
+      soldout: false,
+      imageUrl: 'https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9300000003335]_20210310092146175.jpg',
+      price: 100000,
+    },
+  ];
+  return <ProductList data={products} />;
 }
 
 export default Main;
-interface Text {
-  text: string;
-}
-
-const Container = styled.div<Text>`
-  width: 200px;
-  height: 200px;
-  border: 1px solid red;
-  ${({ theme }) => theme.media.desktop`        
-      border: 2px solid blue;
-      ${(props: Text) => `&::before{
-          content:"데스크톱 ${props.text}"
-      }`};
-  `}
-  ${({ theme }) => theme.media.tablet`
-      border: 2px solid yellow;
-      ${(props: Text) => `&::before{
-          content:"태블릿 ${props.text}"
-      }`}
-  `}
-  ${({ theme }) => theme.media.mobile`
-      border: 2px solid purple;
-      ${(props: Text) => `&::before{
-          content:"모바일 ${props.text}"
-      }`}
-  `}
-`;
