@@ -1,5 +1,5 @@
-import ProductList from '../../components/ProductList/ProductList';
-import { ProductProps } from '@/components/ProductList/products';
+import ProductList from '@components/ProductList/ProductList';
+import { ProductProps } from '@components/ProductList/products';
 
 function Main(): JSX.Element {
   const products: ProductProps[] = [

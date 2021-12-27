@@ -1,10 +1,7 @@
 {
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
-    "target": "es6",
+    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -18,11 +15,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
-    "typeRoots": ["./types", "./node_modules/@types"], // 보통 types 폴더를 만들어 타입 정의
-    "declaration": true, // lib 만들 때 .d.ts 파일을 자동으로
-    "declarationDir": "./types" // 이 폴더에 만들어주는 옵션
+    "jsx": "react-jsx"
   },
-  "include": ["src", "types/nullable.ts"],
+  "include": ["src", "craco.config.js"],
   "typeRoots": ["./types", "./node_modules/@types"]
 }
